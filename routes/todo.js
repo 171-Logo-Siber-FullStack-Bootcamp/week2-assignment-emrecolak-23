@@ -3,7 +3,7 @@ const todoRouter = express.Router();
 const todoController = require('../src/controllers/todoControllers');
 
 var todos = todoController.getAllTodos();
-
+todoRouter.use(express.json());
 todoRouter.route("/todos").get((req,resp)=>{
 
   if (req.query.id) {
